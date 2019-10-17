@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <button id="ci" @click="clk">点击显示</button>
+        <button id="cs" @click="cl">点击消失</button>
+        <ul id="uls">
+            <li v-for="item in datas">
+                {{item}}
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    var v = new Vue({
+        el: '#box',
+        data: {
+            datas: []
+        },
+        methods: {
+            clk() {
+                this.datas = ['哈哈哈', '嘻嘻嘻']
+            },
+            cl() {
+                this.datas = ['呵呵呵', '滴滴滴', '突突突突突突']
+            }
+        }
+    })
+</script>
+
+</html>

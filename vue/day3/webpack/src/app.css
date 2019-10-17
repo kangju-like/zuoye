@@ -1,0 +1,81 @@
+.weui-tabbar {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    position: relative;
+    z-index: 500;
+    background-color: #F7F7F7;
+}
+
+
+/* .box {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+} */
+
+.weui-badge_dot {
+    padding: .4em;
+    min-width: 0;
+}
+
+.weui-tabbar__item:first-child {
+    padding-left: constant(safe-area-inset-left);
+    padding-left: env(safe-area-inset-left);
+}
+
+.weui-tabbar__item {
+    display: block;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    padding: 8px 0;
+    padding-bottom: calc(8px + constant(safe-area-inset-bottom));
+    padding-bottom: calc(8px + env(safe-area-inset-bottom));
+    font-size: 0;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.weui-tabbar__item.weui-bar__item_on .weui-tabbar__icon,
+.weui-tabbar__item.weui-bar__item_on .weui-tabbar__icon>i,
+.weui-tabbar__item.weui-bar__item_on .weui-tabbar__label {
+    color: #07C160;
+}
+
+.weui-tabbar__icon {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    margin-bottom: 2px;
+}
+
+.weui-badge {
+    display: inline-block;
+    padding: .15em .4em;
+    min-width: 8px;
+    border-radius: 18px;
+    background-color: #FA5151;
+    color: #FFFFFF;
+    line-height: 1.2;
+    text-align: center;
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+.weui-tabbar__label {
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+.g {
+    color: #07C160;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}

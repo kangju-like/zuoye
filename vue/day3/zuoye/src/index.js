@@ -1,0 +1,6 @@
+import 'weui'
+import './styles/styles.css'
+import './components/header/header'
+import './components/search/search.js'
+import './components/panel/panel'
+import './components/tabbar/tabbar'
