@@ -2,12 +2,13 @@ import Vue from 'vue/dist/vue'
 import template from './panel.html'
 import axios from 'axios'
 import se from '../../../chajian/chajian.js'
-var vm = new Vue({
-    el: '#panel',
-    data: {
-        news: [],
-        page: 1,
-        searchText: ""
+export default Vue.component("z-panel", {
+    data() {
+        return {
+            news: [],
+            page: 1,
+            searchText: ""
+        }
 
     },
     template,
@@ -28,8 +29,8 @@ var vm = new Vue({
     },
     computed: {
         newsComputed() {
-            console.log(searchText)
-                // 有搜索值的时候就执行过滤逻辑，否则原封不动返回原数组
+            // console.log(this.searchText)
+            // 有搜索值的时候就执行过滤逻辑，否则原封不动返回原数组
             if (this.searchText) {
                 return this.news.filter((item) => {
                     if (item.title.indexOf(this.searchText) != -1) {
@@ -40,12 +41,13 @@ var vm = new Vue({
                 return this.news
             }
         }
-    }
+    },
+    mounted() {
 
+        se.on('setSeatchText', (searchText) => {
+            this.searchText = searchText
+        })
+
+        this.get()
+    }
 })
-console.log(se)
-se.on('setSeatchText', (searchText) => {
-    vm.searchText = searchText
-})
-vm.get()
-export default vm

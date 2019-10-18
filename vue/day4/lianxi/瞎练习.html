@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <p>one message: "{{hehe}}"</p>
+        <p>two message: "{{haha}}"</p>
+        <strong>{{goods()}}</strong>
+    </div>
+
+</body>
+<script src="./vue.js"></script>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            message: "hello java script!",
+            good: "一点都不好玩"
+        },
+        computed: {
+            // 直接当做普通属性调用不加括号
+            // 任何data中数据变化立即重新计算
+            // 计算属性会缓存
+            haha() {
+                return this.message.split("").reverse().join("")
+            },
+            hehe() {
+                return this.good.split("").concat(["再见", "臭弟弟"]).join("")
+            }
+
+        },
+        methods: {
+            goods: function() {
+                return this.message.split("").concat(['I like js']).join("")
+            }
+        },
+        watch: {
+            good() {
+                console.log(good)
+            },
+            message() {
+                console.log(message);
+
+            }
+        }
+    })
+</script>
+
+</html>

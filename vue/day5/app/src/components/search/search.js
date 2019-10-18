@@ -3,15 +3,18 @@ import template from './search.html'
 import txt from './search.txt'
 import se from '../../../chajian/chajian.js'
 
-let search = new Vue({
-    el: '#search',
-    data: {
 
-        isFocus: true,
+export default Vue.component('z-search', {
 
-        searchText: '',
-        title: txt,
-        cancel: '取消',
+    data() {
+
+        return {
+            isFocus: true,
+
+            searchText: '',
+            title: txt,
+            cancel: '取消',
+        }
     },
 
     template,
@@ -35,5 +38,3 @@ let search = new Vue({
 })
 
 // console.log(weux);
-
-export default search

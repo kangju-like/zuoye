@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script src="./vue.js"></script>
+
+<body>
+    <div id="app">
+        <father-node>
+            哈哈哈哈哈哈哈哈哈
+        </father-node>
+        <father-node>
+            <child-node></child-node>
+        </father-node>
+
+    </div>
+</body>
+<script>
+    Vue.component('child-node', {
+
+        template: `<div style="margin:20px;font-size:20px;font-weight:700;color:red;border:green solid 1px">
+            <div>子组件</div>
+            </div>`
+    })
+    Vue.component('father-node', {
+        data() {
+            return {
+                title: '第一个组件'
+            }
+        },
+        template: `
+        <div style="margin:20px;font-size:20px;font-weight:700;color:#4b3;border:blur solid 1px">
+            <input v-model="title">
+            <div>{{title}}</div>
+            <slot></slot>
+            </div>
+        `
+
+    })
+    new Vue({
+        el: '#app'
+    })
+</script>
+
+</html>

@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+header {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    width: 100%;
+    background-color: rgb(21, 255, 0);
+    color: rgb(255, 255, 255);
+}
+
+.weui-tabbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.weui-panel__ft {
+    margin-bottom: 50px;
+}
